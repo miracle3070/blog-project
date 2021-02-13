@@ -5,15 +5,15 @@
     {% for post in posts.all %}
     <div class="card" style="margin-top:30px; margin-bottom:30px;">
         <div class="card-header">
-          {{ post.pub_date }}
+            {{ post.pub_date }}
         </div>
         <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">{{ post.summary }} ...</p>
-          <a href="#" class="btn btn-primary">자세히 보기</a>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.summary }} ...</p>
+            <a href="{% url 'postDetail' post.id %}" class="btn btn-primary">자세히 보기</a>
         </div>
-      </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
 
 
 </div>

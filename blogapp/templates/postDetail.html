@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container">
+    <h1>{{ post.title }}</h1><br>
+    <h3>작성일: {{ post.pub_date }}</h3><br>
+    <img src="#" alt="첨부된 이미지"><br>
+    <p>{{ post.content }}</p>
+</div>
+
+
+
+
+{% endblock %}
