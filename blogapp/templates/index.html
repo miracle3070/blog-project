@@ -6,7 +6,7 @@
     {% for post in posts %}
     <div class="card" style="margin-top:30px; margin-bottom:30px;">
         <div class="card-header">
-            {{ post.pub_date }}
+            작성자: {{ post.author }} || 작성일: {{ post.pub_date }}
         </div>
         <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
