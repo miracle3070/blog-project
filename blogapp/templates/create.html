@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block contents %}
+<div class="container">
+    <form method="POST" action="{% url 'create' %}">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="게시글 작성">
+    </form>
+
+</div>
+
+{% endblock %}
