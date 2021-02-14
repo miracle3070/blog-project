@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container">
+    <h2>로그인 화면</h2>
+
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h6>아이디</h6>
+        <input type="text" name="username">
+        <h6>비밀번호</h6>
+        <input type="password" name="password">
+        <br><br>
+        <input type="submit" value="로그인">
+    </form>
+    <p style="color:red;">{{ error_message }}</p>
+</div>
+
+
+
+{% endblock %}
