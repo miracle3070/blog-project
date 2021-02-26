@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     path('detail/<int:post_id>', views.postDetail, name="postDetail"),
     path('create/', views.create, name="create"),
+    path('comment/', views.comment, name="comment"),
 ]

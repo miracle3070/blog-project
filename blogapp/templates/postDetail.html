@@ -1,12 +1,31 @@
 {% extends 'base.html' %}
 
 {% block contents %}
+
+<style>
+
+</style>
+
 <div class="container">
     <h1>{{ post.title }}</h1><br>
     <h3>작성자: {{ post.author }}</h3>
     <h3>작성일: {{ post.pub_date }}</h3><br>
     <img src="{{ post.image.url }}" alt="첨부된 이미지"><br>
     <p>{{ post.content }}</p>
+
+    <form method="POST" action="{% url 'comment' %}">
+        {% csrf_token %}
+        <textarea name="content" placeholder="댓글을 입력하세요." rows="3" cols="80"></textarea>
+        <input type="hidden" name="author" value="{{ user.username }}">
+        <input type="hidden" name="post_id" value="{{ post.id }}">
+        <input type="submit" value="입력">
+    </form>
+
+    {% for comment in comments %}
+        <p>{{ comment.author}} - {{comment.content }} - {{ comment.pub_date }}</p>
+    {% endfor %}
+
+    
 </div>
 
 
